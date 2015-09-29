@@ -1,0 +1,136 @@
+Xft.antialias: 1
+Xft.dpi: 100.000000
+Xft.render:	True
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.rgba: vrgb
+
+XDvi*mfMode: ljfour
+XDvi*pixelsPerInch: 600
+XDvi*shrinkFactor: 6
+XDvi*densityPercent:40
+XDvi*paper: a4
+XDvi*wwwBrowser: galeon
+XDvi*thorough: true
+XDvi*Offset: 1cm
+XDvi*t1lib:	on
+
+XDvi*makePk:on
+XDvi.background: grey70
+XDvi*Background: grey70
+XDvi*Scrollbar.background:		grey70
+XDvi*Scrollbar.foreground:		grey40
+XDvi*Scrollbar.borderWidth:		0
+XDvi*Scrollbar.thumb:			black
+XDvi*Scrollbar.displayList:foreground	gray90;lines		1,-1,-1,-1,-1,1;foreground	gray40;lines		-1,0,0,0,0,-1
+
+!## Athena text widgets
+*Paned.Text.translations: #override\n\
+Shift<Btn4Down>,<Btn4Up>: scroll-one-line-down()\n\
+Shift<Btn5Down>,<Btn5Up>: scroll-one-line-up()\n\
+Ctrl<Btn4Down>,<Btn4Up>: previous-page()\n\
+Ctrl<Btn5Down>,<Btn5Up>: next-page()\n\
+None<Btn4Down>,<Btn4Up>:scroll-one-line-down()scroll-one-line-down()scroll-one-line-down()scroll-one-line-down()scroll-one-line-down()\n\
+None<Btn5Down>,<Btn5Up>:scroll-one-line-up()scroll-one-line-up()scroll-one-line-up()scroll-one-line-up()scroll-one-line-up()\n\
+
+!! This is a temporary solution while waiting for the completion of the     !!
+!! real Scheme Engine.                                                      !!
+!!                                                                          !!
+!! IMPORTANT:                                                               !!
+!!       In order to get all scheme definitions to load properly, insert    !!
+!!       at the top of your ~/.xinitrc file, the following command:         !!
+!!	 xrdb ~/.Xdefault                                                   !!
+!!                                                                          !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!## Athena table of contents, for toc widgets of xrn & xmh
+*toc.Translations: #override\n\
+Shift<Btn4Down>,<Btn4Up>: scroll-one-line-down()\n\
+Shift<Btn5Down>,<Btn5Up>: scroll-one-line-up()\n\
+Ctrl<Btn4Down>,<Btn4Up>: previous-page()\n\
+Ctrl<Btn5Down>,<Btn5Up>: next-page()\n\
+None<Btn4Down>,<Btn4Up>:scroll-one-line-down()scroll-one-line-down()scroll-one-line-down()scroll-one-line-down()scroll-one-line-down()\n\
+None<Btn5Down>,<Btn5Up>:scroll-one-line-up()scroll-one-line-up()scroll-one-line-up()scroll-one-line-up()scroll-one-line-up()\n\
+
+        *toolchest.clientDecoration:    title -border
+        *toolchest.clientFunctions:     -resize -minimize -maximize
+        *ToolChest.clientDecoration:    title -border
+        *ToolChest.clientFunctions:     -resize -minimize -maximize
+!	*toolchest*renderTable:                      xft
+!	*toolchest*xft*fontType:                     FONT_IS_XFT
+!	*toolchest*xft*fontName:                     Sans-8
+!	*toolchest*xft*fontSize:                     8
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!
+!! New cursor resources for Desktop, ViewKit and MaXX Desktop based applications.
+!!
+!!  *pointerColor: 		the foreground color
+!!  *pointerColorBackground: 	the background or the border
+!!
+!! The default (fallback) colors for the foreground and backround are red 
+!! and white respectively.  Both 5Dwm and toolchest make used of these 
+!! resources to setup their cursors appearance.  All MaXX applications
+!! will make used of these resources to garanty an even look and feel.
+!
+	*pointerColor:			red
+	*pointerColorBackground:	white
+	*darkBackground:		true
+
+	*scheme:			IndigoMagic
+	Xcursor.theme: 		 	redSGI
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!                                                                         !!
+!! 	         USER OVERRIDE for 5DWM WINDOWS MANAGER Settings           !!
+!!                                                                         !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	*rootButtonClick:		True
+	*showFeedback:			move placement restart quit
+!	*keyboardFocusPolicy:		explicit
+	*keyboardFocusPolicy:		pointer
+!	*interactivePlacement:		False
+	*freezeOnConfig:		False
+	*moveOpaque:			False
+	*sessionClientDB:		.mwmclientbd
+        *useIconBox:                   false
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!
+!! Generic Motif Widgets Settings
+!
+        *XmScale.highlightThickness:           0
+!	*XmScrolledWindow.borderWidth:      1
+
+	*XmMessageBox*XmScale.slidingMode:  XmTHERMOMETER
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!                                                                         !!
+!!            X11 Application Specific Settings (client)                   !!
+!!                                                                         !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+	*renderTable:                      xft
+	*xft*fontType:                     FONT_IS_XFT
+	*xft*fontName:                     Sans-8
+
+       *toolchest*fontList:            -adobe-helvetica-bold-o-normal--14-*
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!	
+!! XTerm, winterm, gnome-terminal Settings
+!
+
+	*XTerm*saveLines:		5000
+	*XTerm*scrollBar:		True
+
+	*xterm*VT100.Translations:	#override\n\
+	<KeyPress>Prior : 		scroll-back(1,page)\n\
+	<KeyPress>Next : 		scroll-forw(1,page)
+
+
+! end of .Xdefaults

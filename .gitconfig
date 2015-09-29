@@ -1,0 +1,10 @@
+[user]
+	name = Jerome Maloberti
+	email = jmaloberti@gmail.com
+[core]
+	excludesfile = /home/jerome/.gitignore
+	autocrlf = input
+[color]
+	ui = auto
+[push]
+	default = simple
